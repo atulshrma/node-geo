@@ -64,6 +64,7 @@ $ cd client && yarn start
 * Maybe implement Express-React SSR since this has only one page and form it needs to serve.
 * SSR would also clean up the code base and remove unnecessary files that were added by the boilerplate.
 * UI could have an interactive Map component which would make selecting/entering an address much easier.
+* Identify and add tests if needed, there are none right now.
 
 
 
