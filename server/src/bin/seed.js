@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const kml = require('gtran-kml');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const connect = require('../models').default;
 
-connect('mongodb://127.0.0.1:27017/node-geo?replicaSet=rs0');
+connect(process.env.MONGO_DB_URL);
 
-const Outlet = mongoose.model('Outlet');
-const Zone = mongoose.model('Zone');
+const Outlet = require('../models/outlets').default;
+const Zone = require('../models/zones').default;
+
 kml.toGeoJson('outlets.kml').then((object) => {
     const geojson = object;
     if (!geojson || !geojson.features || !geojson.features.length) {

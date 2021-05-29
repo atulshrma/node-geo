@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 
 const connect = (uri) => {
-    console.log(uri);
     mongoose
         .connect(uri)
         .then(() => console.log('MongoDB connected...'))
